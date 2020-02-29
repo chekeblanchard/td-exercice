@@ -1,0 +1,25 @@
+package main
+
+import (  
+    "fmt"
+)
+
+
+func main() { 
+  fmt.Println(sort([]int{100,-1,-200,1,0}))
+    
+}
+
+func sort(tab []int) []int {
+	for i := 0 ;i< len(tab);i++{
+		for j,v := range tab {
+			if tab [i] < v{
+				tab[j],tab[i] = tab[i],tab[j]
+			}
+      		}
+
+  	}
+	return tab 
+}
+  
+  
