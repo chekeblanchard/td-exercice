@@ -1,0 +1,48 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type carre struct {
+	c int
+}
+type rectangle struct {
+	L int
+	l int
+}
+type cercle struct {
+	r float64
+}
+
+func main() {
+
+	carre := rectangle{
+		L: 4,
+		l: 4,
+	}
+	rectangle := rectangle{
+		L: 5,
+		l: 4,
+	}
+	newCercle := cercle{
+		r: 2,
+	}
+
+	fmt.Println(carre.perimetres())
+	fmt.Println(rectangle.perimetres())
+	fmt.Println(carre.aire())
+	fmt.Println(rectangle.aire())
+	fmt.Println(newCercle.aire())
+
+}
+func (rectangle rectangle) perimetres() int {
+	return (rectangle.L + rectangle.l) * 2
+}
+func (rectangle rectangle) aire() int {
+	return (rectangle.L * rectangle.l)
+}
+
+func (m cercle) aire() float64 {
+	return m.r * m.r * math.Pi
